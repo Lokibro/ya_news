@@ -54,6 +54,7 @@ def comment(news, author):
     )
     return comment
 
+
 @pytest.fixture
 def list_news():
     today = datetime.today()
@@ -67,3 +68,12 @@ def list_news():
             )
         )
     return news_list
+
+
+@pytest.fixture
+def form_data(news, author):
+    return {
+        'news': news,
+        'author': author,
+        'text': 'Новый комментарий'
+    }
